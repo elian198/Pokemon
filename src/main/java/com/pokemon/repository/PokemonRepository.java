@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PokemonRepository extends JpaRepository<Long, Pokemon> {
+public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
     Pokemon findByNombre(String nombre);
     List<Pokemon> findByTipo(Tipo tipo);
-    List<Pokemon> findByActivo();
+    List<Pokemon> findByActivo(boolean activo);
 }

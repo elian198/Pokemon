@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface EntrenadorRepository extends JpaRepository<Long, Entrenador> {
+public interface EntrenadorRepository extends JpaRepository<Entrenador, Long> {
 
-    @Query( value = "SELECT * FROM entrenador ORDER BY puntos DESC")
+    @Query( value = "SELECT * FROM entrenador ORDER BY puntos DESC", nativeQuery = true)
     List<Entrenador> findByOrder();
     Entrenador findByNombre(String nombre);
-    @Query( value = "SELECT * FROM entrenador GROUP BY region")
+    @Query( value = "SELECT * FROM entrenador GROUP BY region", nativeQuery = true)
     List<Entrenador> findByRegion(String region);
 }
