@@ -31,6 +31,8 @@ public class Pokemon {
     private Fase fase;
     private boolean activo;
 
+    private Long identificador;
+
     public Long getId() {
         return id;
     }
@@ -93,6 +95,14 @@ public class Pokemon {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public Long getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(Long identificador) {
+        this.identificador = identificador;
     }
 
     @Override
