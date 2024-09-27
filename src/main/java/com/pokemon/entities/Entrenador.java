@@ -3,7 +3,9 @@ package com.pokemon.entities;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table( name = "ENTRENADOR")
@@ -21,7 +23,7 @@ public class Entrenador {
     private String region;
     private Integer puntos;
     @OneToMany
-    private List<Pokemon> pokemones = new ArrayList<>();
+    private Map<String,Pokemon> pokemones = new LinkedHashMap<>();
     @OneToMany
     private List<Item> items = new ArrayList<>();
 
@@ -66,11 +68,11 @@ public class Entrenador {
         this.puntos = puntos;
     }
 
-    public List<Pokemon> getPokemones() {
+    public Map<String, Pokemon> getPokemones() {
         return pokemones;
     }
 
-    public void setPokemones(List<Pokemon> pokemones) {
+    public void setPokemones(Map<String, Pokemon> pokemones) {
         this.pokemones = pokemones;
     }
 

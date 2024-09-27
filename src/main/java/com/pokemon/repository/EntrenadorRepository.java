@@ -15,4 +15,5 @@ public interface EntrenadorRepository extends JpaRepository<Entrenador, Long> {
     Entrenador findByNombre(String nombre);
     @Query( value = "SELECT * FROM entrenador GROUP BY region", nativeQuery = true)
     List<Entrenador> findByRegion(String region);
+     void deleteByNombre(String nombre);
 }
